@@ -1,24 +1,38 @@
-function squareSum(){
-    let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    var array = [],
     newArray = [],
     i;
 
-    for (i = 0; i < array.length; i++) {
-        if (array[i] % 2 === 0) {
-            newArray.push(array[i]);
-        }
+    input_text.onkeyup = function () {
+        this.value = this.value.replace (/[^\d,.]/g, '');
+    };
+
+    function getValue () {
+        let val = document.getElementById('input_text').value;
+        array = val.split(",");
     }
 
-    document.write(newArray,`<br/>`);
+    function squareSum(){
+        for (i = 0; i < array.length; i++) {
+            if (array[i] % 2 === 0) {
+                newArray.push(array[i]);
+            }
+        }
 
-    let result = 0;
-    newArray.forEach(function(item) {
-      result += Math.sqrt(item);
-    });
-    return result;
-}
+        document.write(newArray, `<br/>`);
 
-document.write( squareSum() );
+        var result = 0;
+        newArray.forEach(function(item) {
+            result += Math.sqrt(item);
+        });
+        return result;
+    }
+
+    input_btn.onclick = function() {
+        getValue ();
+        document.write( squareSum() );
+    };
+
+
 
 
 
