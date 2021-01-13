@@ -6,42 +6,57 @@
         this.value = this.value.replace (/[^\d,.]/g, '');
     };
 
+    input_num.onkeyup = function () {
+        this.value = this.value.replace (/[^\d]/g, '');
+    };
+
     function getValue () {
         var val = document.getElementById('input_text').value;
         array = val.split(",");
     }
 
-    // function squareSum(){
-    //     for (i = 0; i < array.length; i++) {
-    //         if (array[i] % 2 === 0) {
-    //             newArray.push(array[i]);
-    //         }
-    //     }
+    function setValue () {
+        var value = document.getElementById('input_num').value;
+            array.push (value);
+            tableText.innerHTML = "";
+    }
 
-    //     document.write(newArray, `<br/>`);
+    var tableText = document.getElementById('table_test').getElementsByTagName('tbody')[0];
 
-    //     var result = 0;
-    //     newArray.forEach(function(item) {
-    //         result += Math.sqrt(item);
-    //     });
-    //     return result;
-    // }
+    function delElem(index) {
+        let arr = [];
+        for (i = 0; i < array.length; i++) {
+            if (i != index) {
+                arr.push (array[i]);
+            }
+        }
+        console.log(index);
+        array = arr;
+        tableText.innerHTML = "";
+        elemTbody();
+    }
 
-    // document.write( squareSum() );
-
-    var tableText = document.getElementById("table_text");
-
-    input_btn.onclick = function() {
-        getValue ();
+    function elemTbody() {
         for (i = 0; i < array.length; i++) {
             var newTr = document.createElement ('tr'),
                 newTd = document.createElement ('td');
             newTd.innerHTML = array[i];
+            newTr.innerHTML = `<input type = 'button' onclick='delElem(${i})'  value = 'x'/>`;
             newTr.append (newTd);
             tableText.append (newTr);
-            // console.log (tableText.appendChild (newTr));
         }
+    }
+
+    input_btn.onclick = function() {
+        getValue ();
+        elemTbody();
     };
+
+    input_sub.onclick = function() {
+        setValue ();
+        elemTbody();
+    };
+
 
 
 

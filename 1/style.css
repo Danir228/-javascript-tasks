@@ -1,3 +1,18 @@
-#table_test .table_text tr {
+body {
+    display: flex;
+}
+
+body div {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+table {
+    border: 1px solid black;
+    width: 40px;
+}
+
+table td {
     border: 1px solid black;
 }
