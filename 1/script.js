@@ -1,5 +1,4 @@
     var array = [],
-    newArray = [],
     i;
 
     input_text.onkeyup = function () {
