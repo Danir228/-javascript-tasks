@@ -16,8 +16,8 @@
 
     function setValue () {
         var value = document.getElementById('input_num').value;
-            array.push (value);
-            tableText.innerHTML = "";
+        array.push (value);
+        tableText.innerHTML = "";
     }
 
     var tableText = document.getElementById('table_test').getElementsByTagName('tbody')[0];
@@ -55,6 +55,47 @@
         setValue ();
         elemTbody();
     };
+
+    let checkone = document.getElementById ("checkone"),
+        checktoo = document.getElementById ("checktoo"),
+        inputText = document.getElementById ("input_text"),
+        inputBtn = document.getElementById ("input_btn"),
+        inputNum = document.getElementById ("input_num"),
+        inputSub = document.getElementById ("input_sub"),
+        checkBoxes = document.getElementsByName('check');
+
+        var toogleInput = function(e){
+            target = e.target;
+            if (target.checked == true) {
+                inputText.disabled = false;
+                inputBtn.disabled = false;
+                inputNum.disabled = true;
+                inputSub.disabled = true;
+            }
+        };
+
+        toogleInput({target: checkone});
+        checkone.addEventListener("change", toogleInput);
+
+
+        var toogleInp = function(e){
+            target = e.target;
+            if (target.checked == true) {
+                inputNum.disabled = false;
+                inputSub.disabled = false;
+                inputText.disabled = true;
+                inputBtn.disabled = true;
+
+            } else {
+                inputNum.disabled = true;
+                inputSub.disabled = true;
+            }
+        };
+
+        toogleInp({target: checktoo});
+        checktoo.addEventListener("change", toogleInp);
+
+
 
 
 
