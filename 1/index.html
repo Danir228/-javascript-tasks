@@ -7,26 +7,63 @@
     <title>Math</title>
 </head>
 <body>
-    <div class="block_input_first">
-        <input type="radio" name="check" id="checkone"  value="one" checked="checked">
-        <label>Несколько значений</br> через запятую:</label>
-        <input type="text" id="input_text" title="Введите цифры через запятую"  placeholder="Numbers">
-        <input type="submit" id="input_btn" value="Добавить">
+    <div class="block_inputs-1">
+        <div class="block_input_first">
+            <input type="radio" name="check" id="checkone"  value="one" checked="checked">
+            <label>Несколько значений</br> через запятую:</label>
+            <input type="text" id="input_text" title="Введите цифры через запятую"  placeholder="Numbers">
+            <input type="submit" id="input_btn" value="Добавить">
+        </div>
+        <div class="block_input_too">
+            <input type="radio" name="check" id="checktoo" value="two">
+            <label>Одно</br>значение:</label>
+            <input type="text" id="input_num" title="Введите цифру"  placeholder="Number" >
+            <input type="submit" id="input_sub" value="Добавить" >
+        </div>
+        <table id="table_test">
+            <thead>
+                <th>№</th>
+                <th>Значение</th>
+                <th>Действие</th>
+            </thead>
+            <tbody></tbody>
+        </table>
     </div>
-    <div class="block_input_too">
-        <input type="radio" name="check" id="checktoo" value="two">
-        <label>Одно</br>значение:</label>
-        <input type="text" id="input_num" title="Введите цифру"  placeholder="Number" >
-        <input type="submit" id="input_sub" value="Добавить" >
+    <div class="block_inputs-2">
+        <div class="inputs_item1">
+            <div>
+                <input type="text" class="item1_11">
+                <input type="text" class="item1_12">
+                <input type="text" class="item1_13">
+            </div>
+            <div>
+                <input type="submit" class="item1_2">
+            </div>
+            <div>
+                <input type="text" class="item1_3">
+            </div>
+        </div>
+        <div class="inputs_item2">
+            <div>
+                <input type="text" class="num">
+                <input type="text" class="num">
+                <input type="text" class="num">
+            </div>
+            <div>
+                <input type="submit" class="item2_2">
+            </div>
+            <div class="result">
+                <p id="result"></p>
+            </div>
+        </div>
+        <div class="inputs_item3">
+            <input type="text" id="focus">
+            <div class="result">
+                <p id="focus_result"></p>
+            </div>
+        </div>
     </div>
-    <table id="table_test">
-        <thead>
-            <th>№</th>
-            <th>Значение</th>
-            <th>Действие</th>
-        </thead>
-        <tbody></tbody>
-    </table>
     <script src="script.js"></script>
+    <script src="my.js"></script>
 </body>
 </html>

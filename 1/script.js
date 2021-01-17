@@ -1,5 +1,5 @@
 var array = [],
-i;
+    i;
 
 input_text.onkeyup = function () {
     this.value = this.value.replace (/[^\d,.]/g, '');
@@ -59,12 +59,6 @@ input_sub.onclick = function() {
     elemTbody();
 };
 
-// let edit = document.querySelectorAll('.edit');
-
-// var editElement = function() {
-
-// };
-
 let checkone = document.getElementById ("checkone"),
     checktoo = document.getElementById ("checktoo"),
     inputText = document.getElementById ("input_text"),
@@ -102,6 +96,9 @@ var toogleInp = function(e){
 
 toogleInp({target: checktoo});
 checktoo.addEventListener("change", toogleInp);
+
+
+
 
 
 
