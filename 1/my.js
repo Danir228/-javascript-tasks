@@ -109,4 +109,88 @@ focusInp.onblur = function() {
     sumNewValue();
 }
 
+// Задача №4 - Дан инпут. В него вводятся числа через запятую. По потери фокуса найдите среднее арифметическое этих чисел (сумма делить на количество)
 
+loss_focus1.onkeyup = function () {
+    this.value = this.value.replace (/[^\d,.]/g, '');
+};
+
+var lossFocusFirst = document.getElementById ("loss_focus1");
+
+function focusFirst() {
+    var sum = 0;
+    var str = lossFocusFirst.value;
+	var newArray = str.split(",");
+    for (var i = 0; i < newArray.length; i++) {
+		sum += +newArray[i] / newArray.length;
+    }
+    var resultFocusFirst = document.getElementById ("loss_focus1_result");
+    resultFocusFirst.innerHTML = sum;
+}
+
+lossFocusFirst.onblur = function() {
+    focusFirst();
+}
+
+// Задача №5 - Дан инпут. В него вводится ФИО через пробел. По потери фокуса запишите фамилию, имя и отчество в отдельные инпуты
+
+var lossFocusSecond = document.getElementById ("loss_focus2");
+
+function focusLastName() {
+    var str1;
+    var str = lossFocusSecond.value;
+	var newArr = str.split(" ");
+    for (var i = 0; i < newArr.length; i++) {
+        str1 = newArr[0];
+    }
+    var resultFocusLastName = document.getElementById ("loss_focus2_result1");
+    resultFocusLastName.value = str1;
+}
+
+function focusName() {
+    var str1;
+    var str = lossFocusSecond.value;
+	var newArr = str.split(" ");
+    for (var i = 0; i < newArr.length; i++) {
+        str1 = newArr[1];
+    }
+    var resultFocusName = document.getElementById ("loss_focus2_result2");
+    resultFocusName.value = str1;
+}
+
+function focusMidleName() {
+    var str1;
+    var str = lossFocusSecond.value;
+	var newArr = str.split(" ");
+    for (var i = 0; i < newArr.length; i++) {
+        str1 = newArr[2];
+    }
+    var resultFocusMidleName = document.getElementById ("loss_focus2_result3");
+    resultFocusMidleName.value = str1;
+}
+
+lossFocusSecond.onblur = function() {
+    focusLastName();
+    focusName();
+    focusMidleName();
+}
+
+//  Задача №6 - Дан инпут. В него вводится ФИО через пробел. ФИО вводится с маленькой буквы. Сделайте так, чтобы по потери фокуса инпутом, введенные фамилия, имя и отчество автоматически стали записанными с большой буквы (в том же инпуте).
+
+var lossFocusThird = document.getElementById ("loss_focus3");
+
+function fullName() {
+    var res = [];
+    var str = lossFocusThird.value;
+    var newArr = str.split(" ");
+    for (i = 0; i < newArr.length; i++) {
+        newArr[i] = newArr[i].toUpperCase();
+        res.push(newArr[i]);
+    }
+    var lossFocThird = document.getElementById ("loss_focus3");
+    lossFocThird.value = res.join(" ");
+}
+
+lossFocusThird.onblur = function() {
+    fullName();
+}

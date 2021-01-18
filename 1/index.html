@@ -31,9 +31,12 @@
     </div>
     <div class="block_inputs-2">
         <div class="inputs_item1">
+            <label for="">
+                Даны 3 инпута и кнопка. По нажатию на кнопку получите числа, стоящие в этих инпутах и запишите их сумму в четвертый инпут.
+            </label>
             <div>
-                <input type="text" class="item1_11">
-                <input type="text" class="item1_12">
+                <input type="text" class="item1_11 ">
+                <input type="text" class="item1_12 line_height">
                 <input type="text" class="item1_13">
             </div>
             <div>
@@ -44,9 +47,12 @@
             </div>
         </div>
         <div class="inputs_item2">
+            <label for="">
+                Даны N инпутов и кнопка. По нажатию на кнопку получите числа, стоящие в этих инпутах и запишите их сумму в абзац.
+            </label>
             <div>
                 <input type="text" class="num">
-                <input type="text" class="num">
+                <input type="text" class="num line_height">
                 <input type="text" class="num">
             </div>
             <div>
@@ -57,10 +63,39 @@
             </div>
         </div>
         <div class="inputs_item3">
+            <label for="">
+                Дан инпут. В него вводится число. По потери фокуса найдите сумму цифр этого числа.
+            </label>
             <input type="text" id="focus">
             <div class="result">
                 <p id="focus_result"></p>
             </div>
+        </div>
+        <div class="inputs_item4">
+            <label for="">
+                Дан инпут. В него вводятся числа через запятую. По потери фокуса найдите среднее арифметическое этих чисел (суммe делить на количество).
+            </label>
+            <input type="text" id = "loss_focus1">
+            <div class="result">
+                <p id="loss_focus1_result"></p>
+            </div>
+        </div>
+        <div class="inputs_item5">
+            <label for="">
+                Дан инпут. В него вводится ФИО через пробел. По потери фокуса запишите фамилию, имя и отчество в отдельные инпуты.
+            </label>
+            <input type="text" id = "loss_focus2">
+            <div>
+                <input type="text" id="loss_focus2_result1">
+                <input type="text" class="line_height" id="loss_focus2_result2">
+                <input type="text" id="loss_focus2_result3">
+            </div>
+        </div>
+        <div class="inputs_item6">
+            <label for="">
+                Дан инпут. В него вводится ФИО через пробел. ФИО вводится с маленькой буквы. Сделайте так, чтобы по потери фокуса инпутом, введенные фамилия, имя и отчество автоматически стали записанными с большой буквы (в том же инпуте).
+            </label>
+            <input type="text" id="loss_focus3">
         </div>
     </div>
     <script src="script.js"></script>

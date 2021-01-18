@@ -14,6 +14,9 @@ body div {
 }
 
 .block_inputs-2 .inputs_item1 {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    padding-top: 10px;
     display: flex;
     flex-direction: initial;
 }
@@ -23,6 +26,9 @@ body div {
 }
 
 .block_inputs-2 .inputs_item2 {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    padding-top: 10px;
     display: flex;
     flex-direction: initial;
     margin-top: 40px;
@@ -44,13 +50,72 @@ body div {
 }
 
 .block_inputs-2 .inputs_item3 {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    padding-top: 10px;
     display: flex;
     flex-direction: initial;
     margin-top: 30px;
 }
 
+.block_inputs-2 label {
+    width: 270px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+
+
 .inputs_item3 #focus {
     margin-right: 20px;
+    height: 15px;
+}
+
+.block_inputs-2 .inputs_item4 {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: initial;
+    margin-top: 30px;
+}
+
+.inputs_item4 #loss_focus1 {
+    margin-right: 20px;
+    height: 15px;
+}
+
+.block_inputs-2 .inputs_item5 {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: initial;
+    margin-top: 30px;
+}
+
+.inputs_item5 #loss_focus2 {
+    margin-right: 20px;
+    height: 15px;
+}
+
+.line_height {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.block_inputs-2 .inputs_item6 {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: initial;
+    margin-top: 30px;
+}
+
+.inputs_item6 #loss_focus3 {
+    margin-right: 20px;
+    height: 15px;
 }
 
 table {
