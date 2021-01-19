@@ -1,93 +1,42 @@
 // Задача №1 - Даны 3 инпута и кнопка. По нажатию на кнопку получите числа, стоящие в этих инпутах и запишите их сумму в четвертый инпут
 
-let inputCreate = document.querySelector ('.item1_2');
 
-var arr = [],
-    i;
 
-function getValueOne() {
-    var inpVal = document.querySelector ('.item1_11').value;
-    let str1 = parseInt(inpVal);
-    arr.push(str1);
-}
+var inputCreate = document.querySelector ('.item1_2');
 
-function getValueTwo() {
-    var inpValOne = document.querySelector ('.item1_12').value;
-    let str2 = parseInt(inpValOne);
-    arr.push(str2);
-}
-
-function getValueThree() {
-    var inpValTwo = document.querySelector ('.item1_13').value;
-    let str3 = parseInt(inpValTwo);
-    arr.push(str3);
-}
-
-function sumValue() {
-    let result = 0;
-    arr.forEach(function(item) {
-      result += item;
-    });
-    arr = result;
-}
-
-function createVal() {
+function getValueInp() {
+    var result = 0;
+    var num1 = document.querySelector ('.item1_11').value;
+    result += parseInt(num1);
+    var num2 = document.querySelector ('.item1_12').value;
+    result += parseInt(num2);
+    var num3 = document.querySelector ('.item1_13').value;
+    result += parseInt(num3);
     var inputResult = document.querySelector ('.item1_3');
-    inputResult.value = arr;
+    inputResult.value = result;
 }
 
 inputCreate.onclick = function() {
-    getValueOne();
-    getValueTwo();
-    getValueThree();
-    sumValue();
-    createVal();
+    getValueInp();
 }
 
 // Задача №2 - Даны N инпутов с классом .num и кнопка.
 // По нажатию на кнопку получите числа, стоящие в этих инпутах и запишите их сумму в абзац с id="result"
 
-var array = [];
+var inpCreate = document.querySelector ('.item2_2');
 
-function getValueFirst() {
-    var inpNumFirst = document.querySelector ('.num').value;
-    let num1 = parseInt(inpNumFirst);
-    array.push(num1);
+function getValueInp() {
+    var inpNumAll = document.getElementsByClassName ('num');
+    var result = 0;
+    for (i = 0; i < inpNumAll.length; i++) {
+        result += parseInt(inpNumAll[i].value);
+    }
+    var inputResult = document.getElementById ('result');
+    inputResult.innerHTML = result;
 }
-
-function getValueSecond() {
-    var inpNumSecond = document.querySelector ('.num').value;
-    let num2 = parseInt(inpNumSecond);
-    array.push(num2);
-}
-
-function getValueThird() {
-    var inpNumThird = document.querySelector ('.num').value;
-    let num3 = parseInt(inpNumThird);
-    array.push(num3);
-}
-
-function sumNum() {
-    let result = 0;
-    array.forEach(function(item) {
-      result += item;
-    });
-    array = result;
-}
-
-function createValue() {
-    var inpResult = document.getElementById ("result");
-    inpResult.innerHTML = array;
-}
-
-let inpCreate = document.querySelector ('.item2_2');
 
 inpCreate.onclick = function() {
-    getValueFirst();
-    getValueSecond();
-    getValueThird();
-    sumNum();
-    createValue();
+    getValueInp();
 }
 
 // Задача №3 - Дан инпут. В него вводится число. По потери фокуса найдите сумму цифр этого числа.
@@ -120,7 +69,7 @@ var lossFocusFirst = document.getElementById ("loss_focus1");
 function focusFirst() {
     var sum = 0;
     var str = lossFocusFirst.value;
-	var newArray = str.split(",");
+	var newArray = str.split(',');
     for (var i = 0; i < newArray.length; i++) {
 		sum += +newArray[i] / newArray.length;
     }
@@ -134,45 +83,21 @@ lossFocusFirst.onblur = function() {
 
 // Задача №5 - Дан инпут. В него вводится ФИО через пробел. По потери фокуса запишите фамилию, имя и отчество в отдельные инпуты
 
-var lossFocusSecond = document.getElementById ("loss_focus2");
-
-function focusLastName() {
-    var str1;
-    var str = lossFocusSecond.value;
-	var newArr = str.split(" ");
-    for (var i = 0; i < newArr.length; i++) {
-        str1 = newArr[0];
-    }
-    var resultFocusLastName = document.getElementById ("loss_focus2_result1");
-    resultFocusLastName.value = str1;
-}
+var lossFocusSecond = document.getElementById ("loss_focus2"),
+    resultFocusLastName = document.getElementById ("loss_focus2_result1"),
+    resultFocusName = document.getElementById ("loss_focus2_result2"),
+    resultFocusMidleName = document.getElementById ("loss_focus2_result3");
 
 function focusName() {
-    var str1;
     var str = lossFocusSecond.value;
-	var newArr = str.split(" ");
-    for (var i = 0; i < newArr.length; i++) {
-        str1 = newArr[1];
-    }
-    var resultFocusName = document.getElementById ("loss_focus2_result2");
-    resultFocusName.value = str1;
-}
-
-function focusMidleName() {
-    var str1;
-    var str = lossFocusSecond.value;
-	var newArr = str.split(" ");
-    for (var i = 0; i < newArr.length; i++) {
-        str1 = newArr[2];
-    }
-    var resultFocusMidleName = document.getElementById ("loss_focus2_result3");
-    resultFocusMidleName.value = str1;
+	var newArr = str.split(' ');
+    resultFocusLastName.value = newArr[0];
+    resultFocusName.value = newArr[1];
+    resultFocusMidleName.value = newArr[2];
 }
 
 lossFocusSecond.onblur = function() {
-    focusLastName();
     focusName();
-    focusMidleName();
 }
 
 //  Задача №6 - Дан инпут. В него вводится ФИО через пробел. ФИО вводится с маленькой буквы. Сделайте так, чтобы по потери фокуса инпутом, введенные фамилия, имя и отчество автоматически стали записанными с большой буквы (в том же инпуте).
@@ -182,10 +107,9 @@ var lossFocusThird = document.getElementById ("loss_focus3");
 function fullName() {
     var res = [];
     var str = lossFocusThird.value;
-    var newArr = str.split(" ");
+    var newArr = str.split(' ');
     for (i = 0; i < newArr.length; i++) {
-        newArr[i] = newArr[i].toUpperCase();
-        res.push(newArr[i]);
+        res.push(newArr[i].toUpperCase());
     }
     var lossFocThird = document.getElementById ("loss_focus3");
     lossFocThird.value = res.join(" ");
@@ -194,3 +118,59 @@ function fullName() {
 lossFocusThird.onblur = function() {
     fullName();
 }
+
+// Задача №7 - Дан инпут. В него вводится текст. По потери фокуса узнайте количество слов в этом тексте.
+
+var lossFocusFo = document.getElementById ("loss_focus4");
+
+function lenghtName() {
+    var len = 0;
+    var str = lossFocusFo.value;
+    var newArr = str.split(' ');
+    for (i = 0; i < newArr.length; i++) {
+        len += newArr[i].length;
+    }
+    var lossFocusRes = document.getElementById ("loss_focus4_result");
+    lossFocusRes.innerHTML = len;
+}
+
+lossFocusFo.onblur = function() {
+    lenghtName();
+}
+
+// Задача №8 - Дан инпут. В него вводится текст. По потери фокуса узнайте количество символов в самом длинном слове в этом тексте.
+
+var lossFocusFive = document.getElementById ("loss_focus5");
+
+function maxLengthName() {
+    var len = '';
+    var str = lossFocusFive.value;
+    var newArr = str.split(' ');
+    for (i = 0; i < newArr.length; i++) {
+        if (newArr[i].length > newArr.length) {
+            len = newArr[i].length;
+        }
+    }
+    var lossFocusRes = document.getElementById ("loss_focus5_result");
+    lossFocusRes.innerHTML = len;
+}
+
+lossFocusFive.onblur = function() {
+    maxLengthName();
+}
+
+// Задача №9 - Дан инпут. В него вводится дата в формате 31.12.2016. По потери фокуса в этом же инпуте поставьте эту дату в формате 2016-12-31.
+
+var lossFocusSix = document.getElementById ("loss_focus6");
+
+function newDateFormat() {
+    var str = lossFocusSix.value;
+    var newArr = str.split('.');
+    var sorted = newArr.reverse();
+    lossFocusSix.value = sorted.join('-');
+}
+
+lossFocusSix.onblur = function() {
+    newDateFormat();
+}
+

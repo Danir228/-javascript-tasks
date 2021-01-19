@@ -118,6 +118,48 @@ body div {
     height: 15px;
 }
 
+.block_inputs-2 .inputs_item7 {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: initial;
+    margin-top: 30px;
+}
+
+.inputs_item7 #loss_focus4 {
+    margin-right: 20px;
+    height: 15px;
+}
+
+.block_inputs-2 .inputs_item8 {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: initial;
+    margin-top: 30px;
+}
+
+.inputs_item8 #loss_focus5 {
+    margin-right: 20px;
+    height: 15px;
+}
+
+.block_inputs-2 .inputs_item9 {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: initial;
+    margin-top: 30px;
+}
+
+.inputs_item9 #loss_focus6 {
+    margin-right: 20px;
+    height: 15px;
+}
+
 table {
     border: 1px solid black;
     background: #ffffff;
