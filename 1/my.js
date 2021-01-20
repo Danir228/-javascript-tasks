@@ -18,7 +18,7 @@ function getValueInp() {
 
 inputCreate.onclick = function() {
     getValueInp();
-}
+};
 
 // Задача №2 - Даны N инпутов с классом .num и кнопка.
 // По нажатию на кнопку получите числа, стоящие в этих инпутах и запишите их сумму в абзац с id="result"
@@ -37,7 +37,7 @@ function getValueInp() {
 
 inpCreate.onclick = function() {
     getValueInp();
-}
+};
 
 // Задача №3 - Дан инпут. В него вводится число. По потери фокуса найдите сумму цифр этого числа.
 
@@ -56,7 +56,7 @@ function sumNewValue() {
 
 focusInp.onblur = function() {
     sumNewValue();
-}
+};
 
 // Задача №4 - Дан инпут. В него вводятся числа через запятую. По потери фокуса найдите среднее арифметическое этих чисел (сумма делить на количество)
 
@@ -79,7 +79,7 @@ function focusFirst() {
 
 lossFocusFirst.onblur = function() {
     focusFirst();
-}
+};
 
 // Задача №5 - Дан инпут. В него вводится ФИО через пробел. По потери фокуса запишите фамилию, имя и отчество в отдельные инпуты
 
@@ -98,7 +98,7 @@ function focusName() {
 
 lossFocusSecond.onblur = function() {
     focusName();
-}
+};
 
 //  Задача №6 - Дан инпут. В него вводится ФИО через пробел. ФИО вводится с маленькой буквы. Сделайте так, чтобы по потери фокуса инпутом, введенные фамилия, имя и отчество автоматически стали записанными с большой буквы (в том же инпуте).
 
@@ -117,7 +117,7 @@ function fullName() {
 
 lossFocusThird.onblur = function() {
     fullName();
-}
+};
 
 // Задача №7 - Дан инпут. В него вводится текст. По потери фокуса узнайте количество слов в этом тексте.
 
@@ -127,16 +127,14 @@ function lenghtName() {
     var len = 0;
     var str = lossFocusFo.value;
     var newArr = str.split(' ');
-    for (i = 0; i < newArr.length; i++) {
-        len += newArr[i].length;
-    }
+    len += newArr.length;
     var lossFocusRes = document.getElementById ("loss_focus4_result");
     lossFocusRes.innerHTML = len;
 }
 
 lossFocusFo.onblur = function() {
     lenghtName();
-}
+};
 
 // Задача №8 - Дан инпут. В него вводится текст. По потери фокуса узнайте количество символов в самом длинном слове в этом тексте.
 
@@ -157,7 +155,7 @@ function maxLengthName() {
 
 lossFocusFive.onblur = function() {
     maxLengthName();
-}
+};
 
 // Задача №9 - Дан инпут. В него вводится дата в формате 31.12.2016. По потери фокуса в этом же инпуте поставьте эту дату в формате 2016-12-31.
 
@@ -172,5 +170,5 @@ function newDateFormat() {
 
 lossFocusSix.onblur = function() {
     newDateFormat();
-}
+};
 
