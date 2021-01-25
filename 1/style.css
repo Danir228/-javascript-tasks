@@ -13,19 +13,7 @@ body div {
     margin-right: 20px;
 }
 
-.block_inputs-2 .inputs_item1 {
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    padding-top: 10px;
-    display: flex;
-    flex-direction: initial;
-}
-
-.block_inputs-2 .inputs_item1 div {
-    margin-right: 10px;
-}
-
-.block_inputs-2 .inputs_item2 {
+.stility {
     border-top: 1px solid black;
     border-left: 1px solid black;
     padding-top: 10px;
@@ -34,28 +22,23 @@ body div {
     margin-top: 40px;
 }
 
-.block_inputs-2 .inputs_item2 div {
-    margin-right: 10px;
-}
-
-.block_inputs-2 .result {
+.result {
     width: 30px;
     height: 20px;
     text-align: center;
     background: #ffffff;
 }
 
-.block_inputs-2 .result p {
+.result p {
     margin: 0 auto;
 }
 
-.block_inputs-2 .inputs_item3 {
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    padding-top: 10px;
-    display: flex;
-    flex-direction: initial;
-    margin-top: 30px;
+.block_inputs-2 .inputs_item1 div {
+    margin-right: 20px;
+}
+
+.block_inputs-2 .inputs_item2 div {
+    margin-right: 20px;
 }
 
 .block_inputs-2 label {
@@ -64,100 +47,80 @@ body div {
     text-align: center;
 }
 
+.inputs_item12 .result {
+    width: 150px;
+}
 
+#loss_focus12 {
+    margin-left: 20px;
+}
 
-.inputs_item3 #focus {
+.inputs_item13 .result {
+    width: 150px;
+    height: 40px;
+}
+
+.inputs_item14 .result {
+    width: 80px;
+    height: 110px;
+}
+
+.inputs_item14 .result .backg {
+    background:rgba(115, 114, 126, 0.651);
+    margin: 10px 0 10px 0;
+}
+
+.inputs_item15 .result {
+    width: 80px;
+    height: 230px;
     margin-right: 20px;
-    height: 15px;
 }
 
-.block_inputs-2 .inputs_item4 {
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    padding-top: 10px;
-    display: flex;
-    flex-direction: initial;
-    margin-top: 30px;
+.inputs_item15 .result .nums {
+    background:rgba(115, 114, 126, 0.651);
+    margin: 10px 0 10px 0;
 }
 
-.inputs_item4 #loss_focus1 {
-    margin-right: 20px;
-    height: 15px;
+.inputs_item16 .result{
+    width: 250px;
+    height: 100%;
+    text-align: left;
 }
 
-.block_inputs-2 .inputs_item5 {
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    padding-top: 10px;
-    display: flex;
-    flex-direction: initial;
-    margin-top: 30px;
+.inputs_item16 .result .links1_item {
+    background:rgb(107, 209, 12);
+    margin: 10px 0 10px 0;
+    text-decoration: none;
+    color: #ffffff;
 }
 
-.inputs_item5 #loss_focus2 {
-    margin-right: 20px;
-    height: 15px;
+.inputs_item16 .result .links1_item:hover {
+    color: blue;
+}
+
+.inputs_item17 .result{
+    width: 250px;
+    height: 100%;
+    text-align: left;
+}
+
+.inputs_item17 .result .links2_item {
+    background:rgb(107, 209, 12);
+    margin: 10px 0 10px 0;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.inputs_item17 .result .links2_item:hover {
+    color: blue;
 }
 
 .line_height {
     margin-top: 5px;
     margin-bottom: 5px;
 }
-
-.block_inputs-2 .inputs_item6 {
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    padding-top: 10px;
-    display: flex;
-    flex-direction: initial;
-    margin-top: 30px;
-}
-
-.inputs_item6 #loss_focus3 {
-    margin-right: 20px;
-    height: 15px;
-}
-
-.block_inputs-2 .inputs_item7 {
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    padding-top: 10px;
-    display: flex;
-    flex-direction: initial;
-    margin-top: 30px;
-}
-
-.inputs_item7 #loss_focus4 {
-    margin-right: 20px;
-    height: 15px;
-}
-
-.block_inputs-2 .inputs_item8 {
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    padding-top: 10px;
-    display: flex;
-    flex-direction: initial;
-    margin-top: 30px;
-}
-
-.inputs_item8 #loss_focus5 {
-    margin-right: 20px;
-    height: 15px;
-}
-
-.block_inputs-2 .inputs_item9 {
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    padding-top: 10px;
-    display: flex;
-    flex-direction: initial;
-    margin-top: 30px;
-}
-
-.inputs_item9 #loss_focus6 {
-    margin-right: 20px;
-    height: 15px;
+.sdvig {
+    margin-left: 20px;
 }
 
 table {

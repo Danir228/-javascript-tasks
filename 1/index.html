@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="my.js" defer></script>
     <title>Math</title>
 </head>
 <body>
@@ -30,7 +32,7 @@
         </table>
     </div>
     <div class="block_inputs-2">
-        <div class="inputs_item1">
+        <div class="inputs_item1 stility">
             <label for="">
                 Даны 3 инпута и кнопка. По нажатию на кнопку получите числа, стоящие в этих инпутах и запишите их сумму в четвертый инпут.
             </label>
@@ -46,7 +48,7 @@
                 <input type="text" class="item1_3">
             </div>
         </div>
-        <div class="inputs_item2">
+        <div class="inputs_item2 stility">
             <label for="">
                 Даны N инпутов и кнопка. По нажатию на кнопку получите числа, стоящие в этих инпутах и запишите их сумму в абзац.
             </label>
@@ -62,67 +64,156 @@
                 <p id="result"></p>
             </div>
         </div>
-        <div class="inputs_item3">
+        <div class="inputs_item3 stility">
             <label for="">
                 Дан инпут. В него вводится число. По потери фокуса найдите сумму цифр этого числа.
             </label>
-            <input type="text" id="focus">
-            <div class="result">
+            <div><input type="text" id="focus"></div>
+            <div class="result sdvig">
                 <p id="focus_result"></p>
             </div>
         </div>
-        <div class="inputs_item4">
+        <div class="inputs_item4 stility">
             <label for="">
                 Дан инпут. В него вводятся числа через запятую. По потери фокуса найдите среднее арифметическое этих чисел (суммe делить на количество).
             </label>
-            <input type="text" id = "loss_focus1">
-            <div class="result">
+            <div><input type="text" id = "loss_focus1"></div>
+            <div class="result sdvig">
                 <p id="loss_focus1_result"></p>
             </div>
         </div>
-        <div class="inputs_item5">
+        <div class="inputs_item5 stility">
             <label for="">
                 Дан инпут. В него вводится ФИО через пробел. По потери фокуса запишите фамилию, имя и отчество в отдельные инпуты.
             </label>
-            <input type="text" id = "loss_focus2">
-            <div>
+            <div><input type="text" id = "loss_focus2"></div>
+            <div class="sdvig">
                 <input type="text" id="loss_focus2_result1">
                 <input type="text" class="line_height" id="loss_focus2_result2">
                 <input type="text" id="loss_focus2_result3">
             </div>
         </div>
-        <div class="inputs_item6">
+        <div class="inputs_item6 stility">
             <label for="">
                 Дан инпут. В него вводится ФИО через пробел. ФИО вводится с маленькой буквы. Сделайте так, чтобы по потери фокуса инпутом, введенные фамилия, имя и отчество автоматически стали записанными с большой буквы (в том же инпуте).
             </label>
-            <input type="text" id="loss_focus3">
+            <div><input type="text" id="loss_focus3"></div>
         </div>
-        <div class="inputs_item7">
+        <div class="inputs_item7 stility">
             <label for="">
                 Дан инпут. В него вводится текст. По потери фокуса узнайте количество слов в этом тексте.
             </label>
-            <input type="text" id = "loss_focus4">
-            <div class="result">
+            <div><input type="text" id = "loss_focus4"></div>
+            <div class="result sdvig">
                 <p id="loss_focus4_result"></p>
             </div>
         </div>
-        <div class="inputs_item8">
+        <div class="inputs_item8 stility">
             <label for="">
                 Дан инпут. В него вводится текст. По потери фокуса узнайте количество символов в самом длинном слове в этом тексте.
             </label>
-            <input type="text" id = "loss_focus5">
-            <div class="result">
+            <div><input type="text" id = "loss_focus5"></div>
+            <div class="result sdvig">
                 <p id="loss_focus5_result"></p>
             </div>
         </div>
-        <div class="inputs_item9">
+        <div class="inputs_item9 stility">
             <label for="">
                 Дан инпут. В него вводится дата в формате 31.12.2016. По потери фокуса в этом же инпуте поставьте эту дату в формате 2016-12-31.
             </label>
-            <input type="text" id="loss_focus6">
+            <div><input type="text" id="loss_focus6"></div>
+        </div>
+        <div class="inputs_item10 stility">
+            <label for="">
+                Дан инпут. В него вводится год рождения пользователя. По нажатию на кнопку выведите в абзац ниже сколько пользователю лет.
+            </label>
+            <div><input type="text" id = "loss_focus7"></div>
+            <div class="result sdvig">
+                <p id="loss_focus7_result"></p>
+            </div>
+        </div>
+        <div class="inputs_item11 stility">
+            <label for="">
+                Дан инпут. В него вводится год рождения пользователя. По нажатию на кнопку выведите в абзац ниже сколько пользователю лет.
+            </label>
+            <div><input type="date" id = "loss_focus8" required pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}"></div>
+            <div class="result sdvig">
+                <p id="loss_focus8_result"></p>
+            </div>
+        </div>
+        <div class="inputs_item12 stility">
+            <label for="">
+                Дан инпут. В него вводится слово. По нажатию на кнопку проверьте то, что это слово читается с начала и с конца одинаково (например, мадам).
+            </label>
+            <div>
+                <input type="text" id = "loss_focus9">
+                <input type="submit" id = "loss_focus10">
+            </div>
+            <div class="result sdvig">
+                <p id="loss_focus9_result"></p>
+            </div>
+        </div>
+        <div class="inputs_item13 stility">
+            <label for="">
+                Дан инпут. В него вводится число. Проверьте по вводу, что это число содержит внутри себя цифру 3.
+            </label>
+            <div><input type="text" id="loss_focus11"></div>
+            <div class="result sdvig">
+                <p id="loss_focus11_result"></p>
+            </div>
+        </div>
+        <div class="inputs_item14 stility">
+            <label for="">
+                Даны N абзацев и кнопка. По нажатию на кнопку запишите в конец каждого абзаца его порядковый номер.
+            </label>
+            <div class="result sdvig">
+                <p class="backg">Текст</p>
+                <p class="backg">Текст</p>
+                <p class="backg">Текст</p>
+            </div>
+            <div><input type="submit" id="loss_focus12"></div>
+        </div>
+        <div class="inputs_item15 stility">
+            <label for="">
+                Даны N абзацев с числами. По нажатию на кнопку выведите эти числа в инпут через запятую в порядке возрастания.
+            </label>
+            <div class="result sdvig">
+                <p class="nums">150</p>
+                <p class="nums">45</p>
+                <p class="nums">1</p>
+                <p class="nums">3</p>
+                <p class="nums">0</p>
+                <p class="nums">2</p>
+            </div>
+            <div><input type="submit" id="loss_focus13"></div>
+            <div><input type="text" id="loss_focus14"></div>
+        </div>
+        <div class="inputs_item16 stility">
+            <label for="">
+                Даны ссылки. По загрузке страницы добавьте в конец каждой ссылки ее href в круглых скобках.
+            </label>
+            <div class="result sdvig" id="links1">
+                <a href="https://learn.javascript.ru/" class="links1_item">Ссылка</a>
+                <a href="https://learn.javascript.ru/" class="links1_item">Ссылка</a>
+                <a href="https://learn.javascript.ru/" class="links1_item">Ссылка</a>
+                <a href="https://learn.javascript.ru/" class="links1_item">Ссылка</a>
+                <a href="https://learn.javascript.ru/" class="links1_item">Ссылка</a>
+                <a href="https://learn.javascript.ru/" class="links1_item">Ссылка</a>
+            </div>
+        </div>
+        <div class="inputs_item17 stility">
+            <label for="">
+                Даны ссылки. По загрузке страницы, если ссылка начинается с http://, то добавьте ей в конец стрелку → (делается так: &rarr;).
+            </label>
+            <div class="result sdvig" id="links2">
+                <a href="https://developer.mozilla.org/ru" class="links2_item">Ссылка</a>
+                <a href="https://developer.mozilla.org/ru" class="links2_item">Ссылка</a>
+                <a href="http://developer.mozilla.org/ru" class="links2_item">Ссылка</a>
+                <a href="https://developer.mozilla.org/ru" class="links2_item">Ссылка</a>
+                <a href="http://developer.mozilla.org/ru" class="links2_item">Ссылка</a>
+                <a href="https://developer.mozilla.org/ru" class="links2_item">Ссылка</a>
+            </div>
         </div>
     </div>
-    <script src="script.js"></script>
-    <script src="my.js"></script>
 </body>
 </html>
