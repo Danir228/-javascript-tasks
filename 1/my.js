@@ -311,3 +311,98 @@ window.addEventListener('load', () => {
         }
     });
 });
+
+// Задача №18 - Даны N абзацев с числами. По нажатию на любой абзац запишите в него квадрат числа, которое в нем находится.
+
+const itemEightenNums = document.querySelectorAll('.item18_nums'),
+      itemParent = document.getElementById("item_18");
+
+itemParent.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = e.target;
+    itemEightenNums.forEach( item => {
+        if(target == item) {
+            let num = item.textContent;
+            let result = parseInt(num);
+            item.textContent = Math.pow(result, 2);
+        }
+    });
+});
+
+// Задача №19 - Даны картинки. По нажатию на любую картинку увеличьте ее в 2 раза.
+
+const itemNineImg = document.querySelectorAll('.item19_img'),
+      imgParent = document.getElementById("item_19");
+
+imgParent.addEventListener('click', (e) => {
+    const target = e.target;
+    itemNineImg.forEach( item => {
+        if(target == item) {
+            item.style.width = "200px";
+        }
+    });
+});
+// Задача №20 - Даны картинки. По первому нажатию на любую картинку увеличьте ее в 2 раза. По второму нажатию - уменьшите обратно.
+
+const itemTenImg = document.querySelectorAll('.img20 img');
+
+itemTenImg.forEach(item => {
+    item.addEventListener('click', bigImg);
+});
+
+function bigImg() {
+    this.width = this.width * 2;
+    this.removeEventListener('click', bigImg);
+	this.addEventListener('click', smallImg);
+}
+
+function smallImg() {
+    this.width = this.width / 2;
+    this.removeEventListener('click', smallImg);
+	this.addEventListener('click', bigImg);
+}
+
+// Задача №21 - Даны N картинок размера 30px. По нажатию на картинку под ними эта картинка появляется размером в 50px.
+
+const itemElevenImg = document.querySelectorAll('.img21 img'),
+      imgPar = document.getElementById("item_21");
+
+imgPar.addEventListener('click', (e) => {
+    const target = e.target;
+    itemElevenImg.forEach(item => {
+        if(target == item) {
+            let clone = item.cloneNode();
+            clone.style.height = "50px";
+            item.after(clone);
+        }
+    });
+});
+
+// Задача №22 - Дан инпут. Реализуйте кнопочки +1, -1, которые будут увеличивать или уменьшать на 1 значение инпута. Сделайте так, чтобы это значение не могло стать меньше нуля.
+
+let lossFocusFiveTeen = document.getElementById("loss_focus15"),
+    lossFocusSixTeen = document.getElementById("loss_focus16"),
+    lossFocusSevenTeen = document.getElementById("loss_focus17");
+
+lossFocusSixTeen.onclick = function() {
+    let num = lossFocusFiveTeen.value;
+    let plus = parseInt(num);
+    let result = plus + 1;
+    lossFocusFiveTeen.value = result;
+};
+
+lossFocusSevenTeen.onclick = function() {
+    let num = lossFocusFiveTeen.value;
+    let plus = parseInt(num);
+    if(plus > 0) {
+        let result = plus - 1;
+        lossFocusFiveTeen.value = result;
+    } else {
+        lossFocusFiveTeen.value = undefined;
+    }
+};
+
+
+
+
+
