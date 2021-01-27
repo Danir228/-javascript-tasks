@@ -161,6 +161,32 @@ body div {
     height: 30px;
 }
 
+.inputs_item24 .result {
+    width: 80px;
+    height: 230px;
+    margin-right: 20px;
+}
+
+.inputs_item24 .result .item24_nums {
+    background:rgba(115, 114, 126, 0.651);
+    margin: 10px 0 10px 0;
+}
+
+.inputs_item25 .result {
+    width: 80px;
+    height: 230px;
+    margin-right: 20px;
+}
+
+.inputs_item25 .result .item25_nums {
+    background:rgba(115, 114, 126, 0.651);
+    margin: 10px 0 10px 0;
+}
+
+.item_27-block2 {
+    margin-bottom: 10px;
+}
+
 .big_width {
     width: 150px;
 }

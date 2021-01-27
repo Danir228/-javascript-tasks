@@ -402,6 +402,87 @@ lossFocusSevenTeen.onclick = function() {
     }
 };
 
+// Задача №23 - Дан инпут. В него вводится число. По потери фокуса проверьте, что в нем лежит число от 1 до 100. Если это так - покрасьте инпут в зеленый цвет, а если не так - в красный.
+
+let lossFocusEighteen = document.getElementById("loss_focus18");
+
+lossFocusEighteen.onblur = function() {
+    let value = lossFocusEighteen.value;
+    if(value <= 100) {
+        lossFocusEighteen.style.background = "green";
+    } else {
+        lossFocusEighteen.style.background = "red";
+    }
+};
+
+// Задача №23 - Дан инпут. Выделите любой текст на странице. По окончанию выделения этот текст должен записаться в этот инпут.
+
+let lossFocusNineteen = document.getElementById("loss_focus19");
+
+window.addEventListener('mouseup', () => {
+    let textDocum = document.getSelection();
+    lossFocusNineteen.value = textDocum;
+});
+
+// Задача №23 - Даны абзацы с числами. По нажатию на кнопку найдите абзац, в котором хранится максимальное число, и сделайте его красного цвета.
+
+const paragTweentyNums = document.querySelectorAll('.item24_nums'),
+      inpTweentyNums = document.getElementById("loss_focus20");
+
+inpTweentyNums.onclick = function() {
+    let max = 0, maxIndex = 0;
+    paragTweentyNums.forEach(function(item, i) {
+        let value = item.textContent;
+        let nums = parseInt(value);
+        if (nums > max) {
+            max = nums;
+            maxIndex = i;
+        }
+    });
+    paragTweentyNums[maxIndex].style.background = "red";
+};
+
+// Задача №24 - Дан инпут. Даны абзацы. Пусть в этот инпут записывается суммарное количество нажатий по этим абзацам
+
+const itemTwentyFoo = document.querySelectorAll('.item25_nums'),
+      itemTwentyFooParent = document.getElementById("inputs_item24_block1");
+let inpTwentyFoo = document.getElementById("loss_focus21");
+
+let clicks = 0;
+function clickME() {
+    clicks += 1;
+    inpTwentyFoo.value = clicks;
+}
+
+itemTwentyFooParent.addEventListener('click', (e) => {
+    const target = e.target;
+    itemTwentyFoo.forEach(function(item) {
+        if(target == item) {
+            clickME();
+        }
+    });
+});
+
+// Задача №25 - Дан инпут с числом. Сделайте так, чтобы каждую секунду в нем появлялся квадрат того числа, которое в нем записано.
+
+let lossFocusTwentyTwo = document.getElementById("loss_focus22");
+
+setInterval(function() {
+    let nums = lossFocusTwentyTwo.value;
+    let num = parseInt(nums);
+    let sum = num * 2;
+    lossFocusTwentyTwo.value = sum;
+}, 1000);
+
+// Задача №26 - Дан инпут и кнопка. По нажатию на кнопку сгенерируйте случайную строку из 8-ми символов и запишите в инпут.
+
+let lossFocusTwentyThreeInput = document.getElementById("loss_focus23"),
+    lossFocusTwentyFooSubmit = document.getElementById("loss_focus24");
+
+lossFocusTwentyFooSubmit.onclick = function() {
+    let str = Math.random().toString(36).substr(2, 8);
+    lossFocusTwentyThreeInput.value = str;
+}
 
 
 
