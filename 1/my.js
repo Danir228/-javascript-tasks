@@ -415,7 +415,7 @@ lossFocusEighteen.onblur = function() {
     }
 };
 
-// Задача №23 - Дан инпут. Выделите любой текст на странице. По окончанию выделения этот текст должен записаться в этот инпут.
+// Задача №24 - Дан инпут. Выделите любой текст на странице. По окончанию выделения этот текст должен записаться в этот инпут.
 
 let lossFocusNineteen = document.getElementById("loss_focus19");
 
@@ -424,7 +424,7 @@ window.addEventListener('mouseup', () => {
     lossFocusNineteen.value = textDocum;
 });
 
-// Задача №23 - Даны абзацы с числами. По нажатию на кнопку найдите абзац, в котором хранится максимальное число, и сделайте его красного цвета.
+// Задача №25 - Даны абзацы с числами. По нажатию на кнопку найдите абзац, в котором хранится максимальное число, и сделайте его красного цвета.
 
 const paragTweentyNums = document.querySelectorAll('.item24_nums'),
       inpTweentyNums = document.getElementById("loss_focus20");
@@ -442,7 +442,7 @@ inpTweentyNums.onclick = function() {
     paragTweentyNums[maxIndex].style.background = "red";
 };
 
-// Задача №24 - Дан инпут. Даны абзацы. Пусть в этот инпут записывается суммарное количество нажатий по этим абзацам
+// Задача №26 - Дан инпут. Даны абзацы. Пусть в этот инпут записывается суммарное количество нажатий по этим абзацам
 
 const itemTwentyFoo = document.querySelectorAll('.item25_nums'),
       itemTwentyFooParent = document.getElementById("inputs_item24_block1");
@@ -463,7 +463,7 @@ itemTwentyFooParent.addEventListener('click', (e) => {
     });
 });
 
-// Задача №25 - Дан инпут с числом. Сделайте так, чтобы каждую секунду в нем появлялся квадрат того числа, которое в нем записано.
+// Задача №27 - Дан инпут с числом. Сделайте так, чтобы каждую секунду в нем появлялся квадрат того числа, которое в нем записано.
 
 let lossFocusTwentyTwo = document.getElementById("loss_focus22");
 
@@ -474,15 +474,139 @@ setInterval(function() {
     lossFocusTwentyTwo.value = sum;
 }, 1000);
 
-// Задача №26 - Дан инпут и кнопка. По нажатию на кнопку сгенерируйте случайную строку из 8-ми символов и запишите в инпут.
+// Задача №28 - Дан инпут и кнопка. По нажатию на кнопку сгенерируйте случайную строку из 8-ми символов и запишите в инпут.
 
 let lossFocusTwentyThreeInput = document.getElementById("loss_focus23"),
-    lossFocusTwentyFooSubmit = document.getElementById("loss_focus24");
+    lossFocusTwentyFooInput = document.getElementById("loss_focus24"),
+    lossFocusTwentyFiveSubmit = document.getElementById("loss_focus25"),
+    lossFocusTwentySixInput = document.getElementById("loss_focus26");
 
-lossFocusTwentyFooSubmit.onclick = function() {
-    let str = Math.random().toString(36).substr(2, 8);
-    lossFocusTwentyThreeInput.value = str;
+lossFocusTwentyThreeInput.onkeyup = function () {
+    this.value = this.value.replace (/[^\w]/g, '');
+};
+
+function rundomStr(leng, arr) {
+    let array = '';
+    for(let i = leng; i > 0; i--) {
+        array += arr[Math.floor(Math.random() * arr.length)];
+    }
+    return array;
 }
+
+lossFocusTwentyFiveSubmit.onclick = function() {
+    let strThree = lossFocusTwentyThreeInput.value;
+    let strFoo = lossFocusTwentyFooInput.value;
+    let strFooNum = parseInt(strFoo);
+    let str = rundomStr(strFooNum, strThree);
+    lossFocusTwentySixInput.value = str;
+};
+
+// Задача №29 - Дан инпут. В него вводится число. По потери фокуса сделайте так, чтобы в абзаце ниже начал тикать обратный отсчет, начиная с введенного числа. Когда отсчет дойдет до нуля - он должен закончится.
+
+let lossFocusTwentySevenInput = document.getElementById("loss_focus27"),
+    lossFocusTwentySevenParagraph = document.getElementById("item28_nums");
+
+function triggerNum() {
+    let number = lossFocusTwentySevenParagraph.textContent;
+    let nums = 0;
+    if(number > 0) {
+        nums = number - 1;
+    } else {
+        nums = NaN;
+    }
+    lossFocusTwentySevenParagraph.textContent = nums;
+}
+
+lossFocusTwentySevenInput.onblur = function() {
+    let str = lossFocusTwentySevenInput.value;
+    let num = parseInt(str);
+    lossFocusTwentySevenParagraph.textContent = num;
+    setInterval(triggerNum, 2000);
+};
+
+// Задача №31 - Дан абзац. Сделайте так, чтобы каждую секунду он менял свой цвет с красного на зеленый и наоборот.
+
+let lossFocusTwentyEightBlock = document.getElementById("inputs_item29_block1");
+
+let colorPar = ['green', 'red'];
+
+let z = 0;
+
+setInterval(function() {
+    lossFocusTwentyEightBlock.style.background = colorPar[z++];
+    z = z % colorPar.length;
+},1000);
+
+// Задача №32 - Дан абзац. Дан массив цветов ['red', 'green', 'blue']. Сделайте так, чтобы каждую секунду абзац менял свой цвет на определенное значение их массива: сначала 'red', потом 'green' и так далее. Как только цвета в массиве закончатся - все начнется сначала. Количество цветов в массиве может быть любым.
+
+let colors = [
+    'red',
+    'green',
+    'LightBlue',
+    'Yellow',
+    'YellowGreen',
+    'Brown',
+    'White',
+    'Blue',
+    'Burlywood',
+    'Gold',
+    'Cyan',
+];
+
+let lossFocusTwentyNineBlock = document.getElementById("inputs_item30_block1");
+
+let q = 0;
+
+setInterval(function() {
+    lossFocusTwentyNineBlock.style.background = colors[q++];
+    q = q % colors.length;
+},1000);
+
+// Задача №33 - Дан абзац. Дан массив строк ['один', 'два', 'три']. Под абзацем ссылка 'следующая строка'. По заходу на страницу в абзаце должен стоять нулевой элемент этого массива, а по нажатию на ссылку - вставлятся следующий элемент.
+
+let lossFocusThirdteenParagraph = document.getElementById("item21_nums");
+let lossFocusThirdteenOneSubmit = document.getElementById("item22_nums");
+
+let arrayStr = ['один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь'];
+
+lossFocusThirdteenParagraph.textContent = arrayStr[0];
+
+let k = 1;
+
+function strValueRec(){
+    lossFocusThirdteenParagraph.textContent = arrayStr[k++];
+}
+
+lossFocusThirdteenOneSubmit.addEventListener('click', strValueRec);
+
+// Задача №34 - Даны инпуты с числами. Произвольное количетсво, пусть три. В первый инпут запишите 1, через секунду во второй инпут запишите 2, еще через секунду в третий инпут 3, потом через секунду в первый инпут запишите 4, во второй 5 и так далее до бесконечности.
+
+let lossFocusThirdteenTwoInput = document.getElementById("item33_nums"),
+    lossFocusThirdteenThreeInput = document.getElementById("item34_nums"),
+    lossFocusThirdteenFooInput = document.getElementById("item35_nums");
+
+setInterval(function(){
+    let num = lossFocusThirdteenFooInput.value;
+    let nums = parseInt(num);
+    lossFocusThirdteenTwoInput.value = nums + 1;
+},3000);
+
+setInterval(function(){
+    let num = lossFocusThirdteenTwoInput.value;
+    let nums = parseInt(num);
+    lossFocusThirdteenThreeInput.value = nums + 1;
+},1000);
+
+setInterval(function(){
+    let num = lossFocusThirdteenThreeInput.value;
+    let nums = parseInt(num);
+    lossFocusThirdteenFooInput.value = nums + 1;
+},2000);
+
+// Задача №35 -
+// Задача №36 -
+// Задача №37 -
+
 
 
 
