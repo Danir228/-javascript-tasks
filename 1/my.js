@@ -581,27 +581,25 @@ lossFocusThirdteenOneSubmit.addEventListener('click', strValueRec);
 
 // Задача №34 - Даны инпуты с числами. Произвольное количетсво, пусть три. В первый инпут запишите 1, через секунду во второй инпут запишите 2, еще через секунду в третий инпут 3, потом через секунду в первый инпут запишите 4, во второй 5 и так далее до бесконечности.
 
-let lossFocusThirdteenTwoInput = document.getElementById("item33_nums"),
-    lossFocusThirdteenThreeInput = document.getElementById("item34_nums"),
-    lossFocusThirdteenFooInput = document.getElementById("item35_nums");
+let lossFocusThirdteenTwoInput = document.querySelectorAll('.item33_nums');
+
+let num = 0;
+let p = 0;
+
+function triggerNum() {
+    num ++;
+    lossFocusThirdteenTwoInput[p].value = num;
+    p++;
+    if(p > 2) {
+        p = 0;
+    }
+}
 
 setInterval(function(){
-    let num = lossFocusThirdteenFooInput.value;
-    let nums = parseInt(num);
-    lossFocusThirdteenTwoInput.value = nums + 1;
-},3000);
-
-setInterval(function(){
-    let num = lossFocusThirdteenTwoInput.value;
-    let nums = parseInt(num);
-    lossFocusThirdteenThreeInput.value = nums + 1;
+    triggerNum();
 },1000);
 
-setInterval(function(){
-    let num = lossFocusThirdteenThreeInput.value;
-    let nums = parseInt(num);
-    lossFocusThirdteenFooInput.value = nums + 1;
-},2000);
+
 
 // Задача №35 -
 // Задача №36 -
