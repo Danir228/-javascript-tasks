@@ -210,6 +210,156 @@ body div {
     cursor: pointer;
 }
 
+.geometric_elements {
+    position: absolute;
+}
+
+.circle {
+    width: 120px;
+    height: 120px;
+    top: 30%;
+    background: #7fee1d;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    border-radius: 60px;
+    position: absolute;
+
+    animation-name: green-circle;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes green-circle {
+    0% {
+        left: 0;
+    }
+    25% {
+        border-radius: 5px;
+        background: #ffffff;
+    }
+    50% {
+
+    }
+    75%{
+        border-radius: 5px;
+        background: #ffffff;
+    }
+    100% {
+        left: 92%;
+    }
+}
+
+.square {
+    width: 120px;
+    height: 120px;
+    right: 0;
+    background: #f447ff;
+    position: absolute;
+
+    animation-name: item-square;
+    animation-duration: 12s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes item-square {
+    0% {
+        top: 0;
+    }
+    25% {
+        border-radius: 5px;
+        background: #ffffff;
+    }
+    50% {
+
+    }
+    75%{
+        border-radius: 5px;
+        background: #ffffff;
+    }
+    100% {
+        top: 5700px;
+    }
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-bottom: 140px solid #fcf921;
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+    position: absolute;
+
+    animation-name: item-triangle;
+    animation-duration: 12s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes item-triangle {
+    0% {
+        top: 0;
+    }
+    25% {
+        border-radius: 5px;
+        background: #ffffff;
+    }
+    50% {
+
+    }
+    75%{
+        border-radius: 5px;
+        background: #ffffff;
+    }
+    100% {
+        top: 5700px;
+    }
+}
+
+.diamond {
+    width: 120px;
+    height: 120px;
+    left: 50%;
+    background: #1eff00;
+/* Rotate */
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+
+    animation-name: item-diamond;
+    animation-duration: 18s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes item-diamond {
+    0% {
+        top: 0;
+    }
+    25% {
+        border-radius: 5px;
+        background: #ffffff;
+    }
+    50% {
+
+    }
+    75%{
+        border-radius: 5px;
+        background: #ffffff;
+    }
+    100% {
+        top: 5700px;
+    }
+}
+
 .big_width {
     width: 150px;
 }
